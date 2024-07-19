@@ -40,6 +40,7 @@ This code is open-source and may be used for whatever you want to do with it.
 - [Flipc](flipc.org) for distributing the boilerplate
 - [Nikita Vostokov](https://github.com/wosk) for code contributions
 - [Alexander Rodriguez](https://github.com/squee72564) for code contributions
+- [derskythe](https://github.com/derskythe) for code contributions
 
 ## Some cool projects I found using this 
 (love seeing it being used. Let me know if you want yours added)<br>

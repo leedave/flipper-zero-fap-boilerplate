@@ -1,3 +1,6 @@
+## 1.2
+- Added fixed to clear furi_string on storage if things fail (found by derskythe)
+
 ## 1.1
 - Add Version to Startscreen
 - Fixed crash after furi_check on fw 0.100.3

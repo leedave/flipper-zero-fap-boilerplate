@@ -24,7 +24,7 @@
 
 #define SUBGHZ_APP_EXTENSION ".sub"
 #define SUBGHZ_APP_FOLDER ANY_PATH("subghz")
-#define BOILERPLATE_VERSION "1.1"
+#define BOILERPLATE_VERSION "1.2"
 
 typedef struct {
     Gui* gui;
