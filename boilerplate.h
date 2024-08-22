@@ -12,7 +12,8 @@
 #include <gui/scene_manager.h>
 #include <gui/modules/variable_item_list.h>
 #include <gui/modules/button_menu.h>
-#include <gui/modules/dialog_ex.h>
+#include <gui/modules/number_input.h>
+#include <gui/modules/text_input.h>
 #include "scenes/boilerplate_scene.h"
 #include "views/boilerplate_startscreen.h"
 #include "views/boilerplate_scene_1.h"
@@ -43,6 +44,9 @@ typedef struct {
     uint32_t led;
     uint32_t save_settings;
     ButtonMenu* button_menu; // Button Menu
+    NumberInput* number_input;
+    int32_t current_number;
+    TextInput* text_input;
 } Boilerplate;
 
 typedef enum {
@@ -51,8 +55,8 @@ typedef enum {
     BoilerplateViewIdScene1,
     BoilerplateViewIdScene2,
     BoilerplateViewIdScene3,
-    BoilerplateViewIdScene4,
-    BoilerplateViewIdScene5,
+    BoilerplateViewIdTextInput,
+    BoilerplateViewIdNumberInput,
     BoilerplateViewIdSettings,
 } BoilerplateViewId;
 
