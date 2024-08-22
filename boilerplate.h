@@ -25,7 +25,9 @@
 
 #define SUBGHZ_APP_EXTENSION ".sub"
 #define SUBGHZ_APP_FOLDER ANY_PATH("subghz")
-#define BOILERPLATE_VERSION "1.2"
+#define BOILERPLATE_VERSION "1.3"
+#define BOILERPLATE_TEXT_STORE_SIZE 128
+#define BOILERPLATE_TEXT_STORE_COUNT 3
 
 typedef struct {
     Gui* gui;
@@ -47,6 +49,7 @@ typedef struct {
     NumberInput* number_input;
     int32_t current_number;
     TextInput* text_input;
+    char text_store[BOILERPLATE_TEXT_STORE_COUNT][BOILERPLATE_TEXT_STORE_SIZE + 1];
 } Boilerplate;
 
 typedef enum {

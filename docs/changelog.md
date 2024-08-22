@@ -1,3 +1,7 @@
+## 1.3
+- Added Text Input Example
+- Added Number Input Example
+
 ## 1.2
 - Added fixed to clear furi_string on storage if things fail (found by derskythe)
 

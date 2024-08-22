@@ -6,6 +6,8 @@ Boilerplate for a Flipper Zero application, you can use this code as a starting 
 - Menu
 - Button Menu
 - File Browser
+- Text Input
+- Number Input
 - Different Scenes / Views
 - Settings Page (On/Off for haptics, sound, led)
 - Handling of Button Inputs

@@ -1,40 +1,37 @@
 #include "../boilerplate.h"
 
-void boilerplate_scene_scene_5_on_enter(void* context) {
+void boilerplate_scene_scene_5_text_input_callback(void* context) {
     furi_assert(context);
     Boilerplate* app = context;
-    DialogsFileBrowserOptions browser_options;
+    view_dispatcher_send_custom_event(app->view_dispatcher, 0);
+}
 
-    // This will filter the browser to only show one file type and also add an icon
-    dialog_file_browser_set_basic_options(&browser_options, SUBGHZ_APP_EXTENSION, &I_sub1_10px);
+void boilerplate_scene_scene_5_on_enter(void* context) {
+    Boilerplate* app = context;
+    TextInput* text_input = app->text_input;
 
-    //Get the Folder you want to browse
-    browser_options.base_path = SUBGHZ_APP_FOLDER;
-    FuriString* path;
-    path = furi_string_alloc();
-    furi_string_set(path, SUBGHZ_APP_FOLDER);
-    bool success = dialog_file_browser_show(app->dialogs, app->file_path, path, &browser_options);
-    furi_string_free(path);
+    text_input_set_header_text(text_input, "This is a custom text");
 
-    if(success) {
-        // Do something with the result in app->file_path
-    }
+    size_t enter_name_length = 32;
+    text_input_set_result_callback(
+        text_input,
+        boilerplate_scene_scene_5_text_input_callback,
+        context,
+        app->text_store[0],
+        enter_name_length,
+        false);
 
-    if(success) {
-        // Load page to do something with result
-        //scene_manager_next_scene(app->scene_manager, BoilerplateViewIdMenu);
-        scene_manager_previous_scene(app->scene_manager); // temp for showcase
-    } else {
-        // This is basically if someone quites the browser
-        scene_manager_previous_scene(app->scene_manager);
-    }
+    view_dispatcher_switch_to_view(app->view_dispatcher, BoilerplateViewIdTextInput);
 }
 
 bool boilerplate_scene_scene_5_on_event(void* context, SceneManagerEvent event) {
-    UNUSED(context);
-    UNUSED(event);
-    bool consumed = true;
+    Boilerplate* app = context;
+    bool consumed = false;
 
+    if(event.type == SceneManagerEventTypeCustom) { //Back button pressed
+        scene_manager_previous_scene(app->scene_manager);
+        return true;
+    }
     return consumed;
 }
 

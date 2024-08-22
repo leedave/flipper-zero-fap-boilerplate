@@ -9,6 +9,8 @@ Use this code as a foundation for developing Flipper Zero Applications, change t
 - Menu
 - Button Menu
 - File Browser
+- Text Input
+- Number Input
 - Different Scenes / Views
 - Settings Page (On/Off for haptics, sound, led)
 - Handling of Button Inputs
