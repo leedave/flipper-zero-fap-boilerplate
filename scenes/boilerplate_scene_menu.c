@@ -1,12 +1,12 @@
 #include "../boilerplate.h"
 
 enum SubmenuIndex {
-    SubmenuIndexScene1 = 10,
-    SubmenuIndexScene2,
-    SubmenuIndexScene3,
-    SubmenuIndexScene4,
-    SubmenuIndexScene5,
-    SubmenuIndexScene6,
+    SubmenuIndexScene1 = 10, // static view
+    SubmenuIndexScene2, // static view with effects
+    SubmenuIndexScene3, // Button Menu
+    SubmenuIndexScene4, // file browser
+    SubmenuIndexScene5, // text input
+    SubmenuIndexScene6, // number input
     SubmenuIndexSettings,
 };
 
@@ -94,11 +94,11 @@ bool boilerplate_scene_menu_on_event(void* context, SceneManagerEvent event) {
             scene_manager_set_scene_state(
                 app->scene_manager, BoilerplateSceneMenu, SubmenuIndexScene4);
             scene_manager_next_scene(app->scene_manager, BoilerplateSceneScene_4);
-        } else if(event.event == SubmenuIndexScene4) {
+        } else if(event.event == SubmenuIndexScene5) {
             scene_manager_set_scene_state(
                 app->scene_manager, BoilerplateSceneMenu, SubmenuIndexScene5);
             scene_manager_next_scene(app->scene_manager, BoilerplateSceneScene_5);
-        } else if(event.event == SubmenuIndexScene4) {
+        } else if(event.event == SubmenuIndexScene6) {
             scene_manager_set_scene_state(
                 app->scene_manager, BoilerplateSceneMenu, SubmenuIndexScene6);
             scene_manager_next_scene(app->scene_manager, BoilerplateSceneScene_6);
