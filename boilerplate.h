@@ -12,7 +12,8 @@
 #include <gui/scene_manager.h>
 #include <gui/modules/variable_item_list.h>
 #include <gui/modules/button_menu.h>
-#include <gui/modules/dialog_ex.h>
+#include <gui/modules/number_input.h>
+#include <gui/modules/text_input.h>
 #include "scenes/boilerplate_scene.h"
 #include "views/boilerplate_startscreen.h"
 #include "views/boilerplate_scene_1.h"
@@ -24,7 +25,9 @@
 
 #define SUBGHZ_APP_EXTENSION ".sub"
 #define SUBGHZ_APP_FOLDER ANY_PATH("subghz")
-#define BOILERPLATE_VERSION "1.2"
+#define BOILERPLATE_VERSION "1.3"
+#define BOILERPLATE_TEXT_STORE_SIZE 128
+#define BOILERPLATE_TEXT_STORE_COUNT 3
 
 typedef struct {
     Gui* gui;
@@ -43,6 +46,10 @@ typedef struct {
     uint32_t led;
     uint32_t save_settings;
     ButtonMenu* button_menu; // Button Menu
+    NumberInput* number_input;
+    int32_t current_number;
+    TextInput* text_input;
+    char text_store[BOILERPLATE_TEXT_STORE_COUNT][BOILERPLATE_TEXT_STORE_SIZE + 1];
 } Boilerplate;
 
 typedef enum {
@@ -51,8 +58,8 @@ typedef enum {
     BoilerplateViewIdScene1,
     BoilerplateViewIdScene2,
     BoilerplateViewIdScene3,
-    BoilerplateViewIdScene4,
-    BoilerplateViewIdScene5,
+    BoilerplateViewIdTextInput,
+    BoilerplateViewIdNumberInput,
     BoilerplateViewIdSettings,
 } BoilerplateViewId;
 
